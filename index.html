@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吉田 希世 | Kise Yoshida</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 上部ナビゲーションヘッダー -->
+    <header class="top-header">
+        <div class="header-content">
+            <!-- 左側：名前/タイトル -->
+            <div class="header-title">
+                <span class="ja">吉田 希世</span>
+                <span class="en" style="display: none;">Kise Yoshida</span>
+            </div>
+            
+            <!-- 中央：ナビゲーションメニュー -->
+            <nav class="top-nav">
+                <button class="nav-item active" onclick="scrollToSection('profile')">
+                    <span class="ja">プロフィール</span>
+                    <span class="en" style="display: none;">Profile</span>
+                </button>
+                <button class="nav-item" onclick="scrollToSection('publication')">
+                    <span class="ja">研究発表</span>
+                    <span class="en" style="display: none;">Publications</span>
+                </button>
+                <button class="nav-item" onclick="scrollToSection('contact')">
+                    <span class="ja">連絡先</span>
+                    <span class="en" style="display: none;">Contact</span>
+                </button>
+            </nav>
+            
+            <!-- 右側：言語切り替えボタン -->
+            <div class="language-switcher">
+                <button class="lang-toggle-btn" onclick="toggleLanguage()" id="langToggle">
+                    <i class="fas fa-language"></i>
+                    <span id="langText">English</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- メインコンテンツ -->
+        <main class="main-content">
+            <!-- Profile セクション -->
+    <section id="profile" class="content-section">
+        <h1>
+            <span class="ja">プロフィール</span>
+            <span class="en" style="display: none;">Profile</span>
+        </h1>
+        
+        <h3>
+            <span class="ja">名前</span>
+            <span class="en" style="display: none;">Name</span>
+        </h3>
+        <p>
+            <span class="ja">吉田 希世</span>
+            <span class="en" style="display: none;">Kise Yoshida</span>
+        </p>
+        
+        <h3>
+            <span class="ja">所属</span>
+            <span class="en" style="display: none;">Affiliation</span>
+        </h3>
+        <p>
+            <span class="ja"><a href="https://www.fai.cds.tohoku.ac.jp/" target="_blank">FaiLab (鈴木潤研究室)</a></span>
+            <span class="en" style="display: none;"><a href="https://www.fai.cds.tohoku.ac.jp/" target="_blank">FaiLab (Jun Suzuki Lab)</a></span>
+        </p>
+        <p>
+            <a href="https://www.nlp.ecei.tohoku.ac.jp/" target="_blank">Tohoku NLP Group</a>
+        </p>
+        
+        <h3>
+            <span class="ja">研究分野</span>
+            <span class="en" style="display: none;">Research Interests</span>
+        </h3>
+        <p>
+            <span class="ja">自然言語処理</span>
+            <span class="en" style="display: none;">Natural Language Processing</span>
+        </p>
+        <h3>
+            <span class="ja">略歴</span>
+            <span class="en" style="display: none;">Biography</span>
+        </h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2022.04</div>
+                <div class="timeline-content">
+                    <h3>
+                        <span class="ja">東北大学 工学部 電気情報物理工学科</span>
+                        <span class="en" style="display: none;">Tohoku University, Faculty of Engineering, Department of Electrical, Information and Physics Engineering</span>
+                    </h3>
+                    <p class="timeline-period">April 2022 - March 2026</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2019.04</div>
+                <div class="timeline-content">
+                    <h3>
+                        <span class="ja">宮城県仙台第二高等学校</span>
+                        <span class="en" style="display: none;">Miyagi Prefectural Sendai Second High School</span>
+                    </h3>
+                    <p class="timeline-period">April 2019 - March 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publication セクション -->
+    <section id="publication" class="content-section">
+        <h1>
+            <span class="ja">研究発表</span>
+            <span class="en" style="display: none;">Publications</span>
+        </h1>
+        <h2>
+            <span class="ja">国内会議 / シンポジウム</span>
+            <span class="en" style="display: none;">Domestic Conferences / Symposium</span>
+        </h2>
+        <div class="publication-list">
+            
+            <div class="publication-item">
+                <div class="publication-title">
+                    自己生成データを活用した事後学習による大規模言語モデルの性能検証
+                </div>
+                <div class="publication-authors">
+                    <strong><u>吉田 希世</u></strong>, 齋藤 由佳, 津田 純花, 内藤 悠, 吉田 倖, 朱 灝丞, 赤間 怜奈, 鈴木 潤.
+                </div>
+                <div class="publication-venue">
+                    第20回言語処理若手シンポジウム(YANS 2025), 浜松, September 2025.
+                </div>
+                <div class="publication-links">
+                    <a href="poster/yans2025_S5-P15.pdf" class="poster-button" target="_blank">
+                        <i class="fas fa-file button-icon"></i> poster
+                    </a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">
+                    大規模言語モデルにおける人工データ生成指針の検討
+                </div>
+                <div class="publication-authors">
+                    津田 純花, 齋藤 由佳, <u>吉田 希世</u>, 吉田 倖, 朱 灏丞, 内藤 悠, 赤間 怜奈, 鈴木 潤.
+                </div>
+                <div class="publication-venue">
+                    第20回言語処理若手シンポジウム(YANS 2025), 浜松, September 2025.
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">
+                    事後学習における評価データの利用が大規模言語モデルに与える影響
+                </div>
+                <div class="publication-authors">
+                    齋藤 由佳, 津田 純花, <u>吉田 希世</u>, 朱 灏丞, 内藤 悠, 吉田 倖, 赤間 怜奈, 鈴木 潤.
+                </div>
+                <div class="publication-venue">
+                    第20回言語処理若手シンポジウム(YANS 2025), 浜松, September 2025.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact セクション -->
+    <section id="contact" class="content-section">
+        <h1>
+            <span class="ja">連絡先</span>
+            <span class="en" style="display: none;">Contact</span>
+        </h1>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fa-regular fa-envelope contact-icon"></i>
+                <span class="contact-text">yoshida.kise.t1[at]dc.tohoku.ac.jp</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-x-twitter contact-icon"></i>
+                <a href="https://x.com/KiseYoshida_nlp" target="_blank" class="contact-text">https://x.com/KiseYoshida_nlp</a>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-github contact-icon"></i>
+                <a href="https://github.com/KiseYoshida" target="_blank" class="contact-text">https://github.com/KiseYoshida</a>
+            </div>
+        </div>
+    </section>
+
+        </main>
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            © 2025 Kise Yoshida
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
