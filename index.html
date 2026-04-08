@@ -11,34 +11,49 @@
     <!-- 上部ナビゲーションヘッダー -->
     <header class="top-header">
         <div class="header-content">
-            <!-- 左側：名前/タイトル -->
-            <div class="header-title">
-                <span class="ja">吉田 希世</span>
-                <span class="en" style="display: none;">Kise Yoshida</span>
+            <div class="header-left">
+                <!-- 左側：名前/タイトル -->
+                <div class="header-title">
+                    <span class="ja">吉田 希世</span>
+                    <span class="en" style="display: none;">Kise Yoshida</span>
+                </div>
             </div>
-            
-            <!-- 中央：ナビゲーションメニュー -->
-            <nav class="top-nav">
-                <button class="nav-item active" onclick="scrollToSection('profile')">
-                    <span class="ja">プロフィール</span>
-                    <span class="en" style="display: none;">Profile</span>
-                </button>
-                <button class="nav-item" onclick="scrollToSection('publication')">
-                    <span class="ja">研究発表</span>
-                    <span class="en" style="display: none;">Publications</span>
-                </button>
-                <button class="nav-item" onclick="scrollToSection('contact')">
-                    <span class="ja">連絡先</span>
-                    <span class="en" style="display: none;">Contact</span>
-                </button>
-            </nav>
-            
-            <!-- 右側：言語切り替えボタン -->
-            <div class="language-switcher">
-                <button class="lang-toggle-btn" onclick="toggleLanguage()" id="langToggle">
-                    <i class="fas fa-language"></i>
-                    <span id="langText">Japanese</span>
-                </button>
+
+            <div class="header-right">
+                <!-- 右側：言語切り替えボタン -->
+                <div class="language-switcher">
+                    <button class="lang-toggle-btn" onclick="toggleLanguage()" id="langToggle">
+                        <i class="fas fa-language"></i>
+                        <span id="langText">Japanese</span>
+                    </button>
+                </div>
+
+                <!-- 右側：ナビゲーションメニュー -->
+                <nav class="top-nav">
+                    <button class="menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation menu" onclick="toggleNavMenu(event)">
+                        <span class="menu-bar"></span>
+                        <span class="menu-bar"></span>
+                        <span class="menu-bar"></span>
+                    </button>
+                    <div class="nav-menu" id="navMenu" hidden>
+                        <button class="nav-menu-item active" data-section="profile" onclick="scrollToSection('profile')">
+                            <span class="ja">プロフィール</span>
+                            <span class="en" style="display: none;">Profile</span>
+                        </button>
+                        <button class="nav-menu-item" data-section="publication" onclick="scrollToSection('publication')">
+                            <span class="ja">研究発表</span>
+                            <span class="en" style="display: none;">Publications</span>
+                        </button>
+                        <button class="nav-menu-item" data-section="scholarships" onclick="scrollToSection('scholarships')">
+                            <span class="ja">学位プログラム</span>
+                            <span class="en" style="display: none;">Degree Program</span>
+                        </button>
+                        <button class="nav-menu-item" data-section="contact" onclick="scrollToSection('contact')">
+                            <span class="ja">連絡先</span>
+                            <span class="en" style="display: none;">Contact</span>
+                        </button>
+                    </div>
+                </nav>
             </div>
         </div>
     </header>
@@ -52,49 +67,62 @@
             <span class="ja">プロフィール</span>
             <span class="en" style="display: none;">Profile</span>
         </h1>
-        
-        <h3>
-            <span class="ja">名前</span>
-            <span class="en" style="display: none;">Name</span>
-        </h3>
-        <p>
-            <span class="ja">吉田 希世</span>
-            <span class="en" style="display: none;">Kise Yoshida</span>
-        </p>
-        
-        <h3>
-            <span class="ja">所属</span>
-            <span class="en" style="display: none;">Affiliation</span>
-        </h3>
-        <p>
-            <span class="ja"><a href="https://www.fai.cds.tohoku.ac.jp/" target="_blank">FaiLab (鈴木潤研究室)</a></span>
-            <span class="en" style="display: none;"><a href="https://www.fai.cds.tohoku.ac.jp/" target="_blank">FaiLab (Jun Suzuki Lab)</a></span>
-        </p>
-        <p>
-            <a href="https://www.nlp.ecei.tohoku.ac.jp/" target="_blank">Tohoku NLP Group</a>
-        </p>
-        
-        <h3>
-            <span class="ja">研究分野</span>
-            <span class="en" style="display: none;">Research Interests</span>
-        </h3>
-        <p>
-            <span class="ja">自然言語処理</span>
-            <span class="en" style="display: none;">Natural Language Processing</span>
-        </p>
-        <h3>
-            <span class="ja">略歴</span>
-            <span class="en" style="display: none;">Biography</span>
-        </h3>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">2022.04</div>
-                <div class="timeline-content">
+
+        <div class="profile-layout">
+            <h2 class="profile-name-main">
+                <span class="ja">吉田 希世</span>
+                <span class="en" style="display: none;">Kise Yoshida</span>
+            </h2>
+
+            <div class="profile-meta-list">
+                <div class="profile-meta-item">
                     <h3>
-                        <span class="ja">東北大学 工学部 電気情報物理工学科</span>
-                        <span class="en" style="display: none;">Tohoku University, Faculty of Engineering, Department of Electrical, Information and Physics Engineering</span>
+                        <span class="ja">所属</span>
+                        <span class="en" style="display: none;">Affiliation</span>
                     </h3>
-                    <p class="timeline-period">April 2022 - Present</p>
+                    <p>
+                        <span class="ja"><a href="https://www.fai.cds.tohoku.ac.jp/" target="_blank">FaiLab (鈴木潤研究室)</a></span>
+                        <span class="en" style="display: none;"><a href="https://www.fai.cds.tohoku.ac.jp/" target="_blank">FaiLab (Jun Suzuki Lab)</a></span>
+                    </p>
+                    <p><a href="https://www.nlp.ecei.tohoku.ac.jp/" target="_blank">Tohoku NLP Group</a></p>
+                </div>
+
+                <div class="profile-meta-item">
+                    <h3>
+                        <span class="ja">研究分野</span>
+                        <span class="en" style="display: none;">Research Interests</span>
+                    </h3>
+                    <p>
+                        <span class="ja">自然言語処理</span>
+                        <span class="en" style="display: none;">Natural Language Processing</span>
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="profile-bio-title">
+                <span class="ja">略歴</span>
+                <span class="en" style="display: none;">Biography</span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2026.04</div>
+                    <div class="timeline-content">
+                        <h3>
+                            <span class="ja">東北大学大学院 情報科学研究科 システム情報科学専攻</span>
+                            <span class="en" style="display: none;">Graduate School of Information Sciences, Tohoku University, Major in System Information Sciences</span>
+                        </h3>
+                        <p class="timeline-period">April 2026 - Present</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022.04</div>
+                    <div class="timeline-content">
+                        <h3>
+                            <span class="ja">東北大学 工学部 電気情報物理工学科</span>
+                            <span class="en" style="display: none;">Department of Electrical, Information and Physics Engineering, School of Engineering, Tohoku University</span>
+                        </h3>
+                        <p class="timeline-period">April 2022 - March 2026</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -116,10 +144,10 @@
                     説得対話における認知スタイルを考慮したユーザシミュレータの分析
                 </div>
                 <div class="publication-authors">
-                    渡邉 陽太郎, <u>吉田 希世</u>, 齋藤 由佳, 高﨑 環, 守屋 彰二, 赤間 怜奈, 鈴木 潤.
+                    渡邉 陽太郎, <u>吉田 希世</u>, 齋藤 由佳, 髙﨑 環, 守屋 彰二, 赤間 怜奈, 鈴木 潤.
                 </div>
                 <div class="publication-venue">
-                    人工知能学会第40回全国大会(JSAI 2026), 高崎, May 2025.
+                    人工知能学会第40回全国大会(JSAI 2026), 高崎, June 2025.
                 </div>
             </div>
             
@@ -173,6 +201,20 @@
         </div>
     </section>
 
+    <!-- Degree Program セクション -->
+    <section id="scholarships" class="content-section">
+        <h1>
+            <span class="ja">学位プログラム</span>
+            <span class="en" style="display: none;">Graduate Program</span>
+        </h1>
+        <ul>
+            <li>
+                <span class="ja"><a href="https://www.aie.tohoku.ac.jp/" target="_blank">東北大学人工知能エレクトロニクス卓越大学院プログラム</a>，2026.04 -</span>
+                <span class="en" style="display: none;"><a href="https://www.aie.tohoku.ac.jp/" target="_blank">WISE Program for AI Electronics (AIE)</a>, April 2026 -</span>
+            </li>
+        </ul>
+    </section>
+
     <!-- Contact セクション -->
     <section id="contact" class="content-section">
         <h1>
@@ -201,7 +243,11 @@
     <!-- フッター -->
     <footer class="footer">
         <div class="footer-content">
-            © 2025 Kise Yoshida
+            <div>© 2025 Kise Yoshida</div>
+            <div>
+                <span class="ja">最終更新日: <span id="lastUpdatedJa"></span></span>
+                <span class="en" style="display: none;">Last Updated: <span id="lastUpdatedEn"></span></span>
+            </div>
         </div>
     </footer>
 
