@@ -575,6 +575,48 @@ body {
     margin-right: 4px;
 }
 
+/* Experience セクションのスタイル */
+.experience-list {
+    display: grid;
+    gap: 34px;
+    margin-top: 18px;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 22px;
+    padding: 0;
+    background: transparent;
+}
+
+.experience-item:not(:last-child) {
+    padding-bottom: 18px;
+    border-bottom: 1px dashed #cfd4da;
+}
+
+.experience-period {
+    color: #666670;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.experience-title {
+    margin-bottom: 6px;
+    color: #3b2a1f;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+.experience-meta {
+    display: grid;
+    gap: 2px;
+    color: #666670;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
 /* Contact セクションのスタイル */
 .contact-info {
     margin-top: 20px;
@@ -808,6 +850,28 @@ body {
     .award {
         font-size: 11px;
         padding: 1px 6px;
+    }
+
+    /* Experience のモバイル対応 */
+    .experience-list {
+        gap: 24px;
+    }
+
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .experience-period {
+        font-size: 13px;
+    }
+
+    .experience-title {
+        font-size: 15px;
+    }
+
+    .experience-meta {
+        font-size: 13px;
     }
     
     /* Contact のモバイル対応 */

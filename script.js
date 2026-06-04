@@ -1,4 +1,4 @@
-const sectionIds = ['profile', 'publication', 'scholarships', 'contact'];
+const sectionIds = ['profile', 'publication', 'scholarships', 'experience', 'contact'];
 
 function setActiveNavItem(sectionId) {
     const allNavItems = document.querySelectorAll('.nav-menu-item');
