@@ -113,6 +113,31 @@ function updateLanguageButton(lang) {
     }
 }
 
+function toggleTheme() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    updateThemeButton(isDark);
+    localStorage.setItem('preferredTheme', isDark ? 'dark' : 'light');
+}
+
+function switchToTheme(theme) {
+    const isDark = theme === 'dark';
+    document.body.classList.toggle('dark-mode', isDark);
+    updateThemeButton(isDark);
+}
+
+function updateThemeButton(isDark) {
+    const themeIcon = document.getElementById('themeIcon');
+    const themeToggle = document.getElementById('themeToggle');
+
+    if (themeIcon) {
+        themeIcon.className = isDark ? 'fa-regular fa-sun' : 'fa-regular fa-moon';
+    }
+
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+}
+
 function formatDate(date) {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -138,6 +163,9 @@ function updateLastUpdatedDate() {
 // ページ読み込み時に保存された言語設定を復元
 document.addEventListener('DOMContentLoaded', function() {
     updateLastUpdatedDate();
+    const savedTheme = localStorage.getItem('preferredTheme') || 'light';
+    switchToTheme(savedTheme);
+
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
     switchToLanguage(savedLanguage);
 
