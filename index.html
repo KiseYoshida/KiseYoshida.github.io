@@ -43,22 +43,58 @@
                         <span class="menu-bar"></span>
                     </button>
                     <div class="nav-menu" id="navMenu" hidden>
-                        <button class="nav-menu-item active" data-section="profile" onclick="scrollToSection('profile')">
-                            <span class="ja" style="display: none;">プロフィール</span>
-                            <span class="en">Profile</span>
-                        </button>
-                        <button class="nav-menu-item" data-section="publication" onclick="scrollToSection('publication')">
-                            <span class="ja" style="display: none;">研究発表</span>
-                            <span class="en">Publications</span>
-                        </button>
+                        <div class="nav-menu-group has-submenu">
+                            <button class="nav-menu-item active" data-section="profile" onclick="scrollToSection('profile')">
+                                <span class="ja" style="display: none;">プロフィール</span>
+                                <span class="en">Profile</span>
+                            </button>
+                            <div class="nav-submenu">
+                                <button class="nav-submenu-item" onclick="scrollToSubsection('profile-affiliation', 'profile')">
+                                    <span class="ja" style="display: none;">所属</span>
+                                    <span class="en">Affiliation</span>
+                                </button>
+                                <button class="nav-submenu-item" onclick="scrollToSubsection('profile-research', 'profile')">
+                                    <span class="ja" style="display: none;">研究分野</span>
+                                    <span class="en">Research Interests</span>
+                                </button>
+                                <button class="nav-submenu-item" onclick="scrollToSubsection('profile-biography', 'profile')">
+                                    <span class="ja" style="display: none;">略歴</span>
+                                    <span class="en">Biography</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="nav-menu-group has-submenu">
+                            <button class="nav-menu-item" data-section="publication" onclick="scrollToSection('publication')">
+                                <span class="ja" style="display: none;">研究発表</span>
+                                <span class="en">Publications</span>
+                            </button>
+                            <div class="nav-submenu">
+                                <button class="nav-submenu-item" onclick="scrollToSubsection('publication-domestic', 'publication')">
+                                    <span class="ja" style="display: none;">国内会議 / シンポジウム</span>
+                                    <span class="en">Domestic Conferences / Symposium</span>
+                                </button>
+                            </div>
+                        </div>
                         <button class="nav-menu-item" data-section="scholarships" onclick="scrollToSection('scholarships')">
                             <span class="ja" style="display: none;">学位プログラム</span>
-                            <span class="en">Degree Program</span>
+                            <span class="en">Graduate Program</span>
                         </button>
-                        <button class="nav-menu-item" data-section="experience" onclick="scrollToSection('experience')">
-                            <span class="ja" style="display: none;">経験</span>
-                            <span class="en">Experience</span>
-                        </button>
+                        <div class="nav-menu-group has-submenu">
+                            <button class="nav-menu-item" data-section="experience" onclick="scrollToSection('experience')">
+                                <span class="ja" style="display: none;">経験</span>
+                                <span class="en">Experience</span>
+                            </button>
+                            <div class="nav-submenu">
+                                <button class="nav-submenu-item" onclick="scrollToSubsection('experience-collaborative-research', 'experience')">
+                                    <span class="ja" style="display: none;">共同研究</span>
+                                    <span class="en">Collaborative Research</span>
+                                </button>
+                                <button class="nav-submenu-item" onclick="scrollToSubsection('experience-teaching', 'experience')">
+                                    <span class="ja" style="display: none;">ティーチングアシスタント</span>
+                                    <span class="en">Teaching Assistant</span>
+                                </button>
+                            </div>
+                        </div>
                         <button class="nav-menu-item" data-section="contact" onclick="scrollToSection('contact')">
                             <span class="ja" style="display: none;">連絡先</span>
                             <span class="en">Contact</span>
@@ -87,7 +123,7 @@
 
             <div class="profile-meta-list">
                 <div class="profile-meta-item">
-                    <h3>
+                    <h3 id="profile-affiliation">
                         <span class="ja" style="display: none;">所属</span>
                         <span class="en">Affiliation</span>
                     </h3>
@@ -99,7 +135,7 @@
                 </div>
 
                 <div class="profile-meta-item">
-                    <h3>
+                    <h3 id="profile-research">
                         <span class="ja" style="display: none;">研究分野</span>
                         <span class="en">Research Interests</span>
                     </h3>
@@ -110,7 +146,7 @@
                 </div>
             </div>
 
-            <h2 class="profile-bio-title">
+            <h2 class="profile-bio-title" id="profile-biography">
                 <span class="ja" style="display: none;">略歴</span>
                 <span class="en">Biography</span>
             </h2>
@@ -145,7 +181,7 @@
             <span class="ja" style="display: none;">研究発表</span>
             <span class="en">Publications</span>
         </h1>
-        <h2>
+        <h2 id="publication-domestic">
             <span class="ja" style="display: none;">国内会議 / シンポジウム</span>
             <span class="en">Domestic Conferences / Symposium</span>
         </h2>
@@ -240,7 +276,7 @@
             <span class="ja" style="display: none;">経験</span>
             <span class="en">Experience</span>
         </h1>
-        <h2>
+        <h2 id="experience-collaborative-research">
             <span class="ja" style="display: none;">共同研究</span>
             <span class="en">Collaborative Research</span>
         </h2>
@@ -258,7 +294,7 @@
                 </div>
             </div>
         </div>
-        <h2>
+        <h2 id="experience-teaching">
             <span class="ja" style="display: none;">ティーチングアシスタント</span>
             <span class="en">Teaching Assistant</span>
         </h2>

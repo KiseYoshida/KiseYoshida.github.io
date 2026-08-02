@@ -1,4 +1,4 @@
-const sectionIds = ['profile', 'publication', 'scholarships', 'experience', 'contact'];
+const sectionIds = ['profile', 'publication', 'awards', 'scholarships', 'experience', 'contact'];
 
 function setActiveNavItem(sectionId) {
     const allNavItems = document.querySelectorAll('.nav-menu-item');
@@ -48,6 +48,22 @@ function scrollToSection(sectionId) {
         const isMobile = window.innerWidth <= 600;
         const targetPosition = section.offsetTop - (isMobile ? 140 : 60);
         
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+
+    setActiveNavItem(sectionId);
+    closeNavMenu();
+}
+
+function scrollToSubsection(subsectionId, sectionId) {
+    const subsection = document.getElementById(subsectionId);
+    if (subsection) {
+        const isMobile = window.innerWidth <= 600;
+        const targetPosition = window.scrollY + subsection.getBoundingClientRect().top - (isMobile ? 140 : 80);
+
         window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'

@@ -214,6 +214,8 @@ body {
     background: var(--menu-bg);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
     z-index: 1100;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
 }
 
 .nav-menu[hidden] {
@@ -240,6 +242,47 @@ body {
     background: var(--accent);
     border-color: var(--accent);
     color: #fff;
+}
+
+.nav-menu-group {
+    display: grid;
+    gap: 4px;
+}
+
+.nav-menu-group > .nav-menu-item {
+    width: 100%;
+}
+
+.nav-submenu {
+    display: none;
+    gap: 3px;
+    margin-left: 14px;
+    padding: 2px 0 2px 10px;
+    border-left: 1px solid var(--divider);
+}
+
+.nav-menu-group:hover > .nav-submenu,
+.nav-menu-group:focus-within > .nav-submenu {
+    display: grid;
+}
+
+.nav-submenu-item {
+    width: 100%;
+    border: 0;
+    border-radius: 6px;
+    padding: 7px 9px;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.35;
+    text-align: left;
+    cursor: pointer;
+}
+
+.nav-submenu-item:hover,
+.nav-submenu-item:focus-visible {
+    background: var(--menu-item-hover-bg);
+    color: var(--text-primary);
 }
 
 .social-btn {
