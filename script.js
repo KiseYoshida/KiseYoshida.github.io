@@ -1,4 +1,11 @@
-const sectionIds = ['profile', 'publication', 'awards', 'scholarships', 'experience', 'contact'];
+const sectionIds = Array.from(
+    document.querySelectorAll('.content-section[id]'),
+    section => section.id
+);
+
+function getScrollOffset() {
+    return window.innerWidth <= 880 ? 82 : 20;
+}
 
 function setActiveNavItem(sectionId) {
     const allNavItems = document.querySelectorAll('.nav-menu-item');
@@ -44,9 +51,7 @@ function toggleNavMenu(event) {
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
-        // モバイル版では大きめのオフセットを設定、PC版でも余裕を持たせる
-        const isMobile = window.innerWidth <= 600;
-        const targetPosition = section.offsetTop - (isMobile ? 140 : 60);
+        const targetPosition = window.scrollY + section.getBoundingClientRect().top - getScrollOffset();
         
         window.scrollTo({
             top: targetPosition,
@@ -61,8 +66,7 @@ function scrollToSection(sectionId) {
 function scrollToSubsection(subsectionId, sectionId) {
     const subsection = document.getElementById(subsectionId);
     if (subsection) {
-        const isMobile = window.innerWidth <= 600;
-        const targetPosition = window.scrollY + subsection.getBoundingClientRect().top - (isMobile ? 140 : 80);
+        const targetPosition = window.scrollY + subsection.getBoundingClientRect().top - getScrollOffset();
 
         window.scrollTo({
             top: targetPosition,
@@ -76,8 +80,7 @@ function scrollToSubsection(subsectionId, sectionId) {
 
 // スクロール位置に応じてアクティブナビゲーションを自動切り替え
 window.addEventListener('scroll', function() {
-    const isMobile = window.innerWidth <= 600;
-    const scrollPosition = window.scrollY + (isMobile ? 150 : 120); // バッファを考慮、PC版も調整
+    const scrollPosition = window.scrollY + getScrollOffset() + 20;
     
     for (let i = sectionIds.length - 1; i >= 0; i--) {
         const section = document.getElementById(sectionIds[i]);
