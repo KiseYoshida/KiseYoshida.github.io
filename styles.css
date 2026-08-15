@@ -474,7 +474,8 @@ a:focus-visible {
     text-transform: none;
 }
 
-.timeline-period {
+.timeline-period,
+.timeline-advisor {
     color: var(--text-muted);
     font-size: 12px;
     font-weight: 700;
