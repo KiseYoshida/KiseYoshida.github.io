@@ -121,6 +121,21 @@ a:focus-visible {
     line-height: 1.5;
 }
 
+.sidebar-profile-icon {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 22px;
+    border: 2px solid var(--sidebar-accent);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 62% 52%;
+}
+
+.header-left .header-title {
+    text-align: center;
+}
+
 .header-right {
     display: grid;
     grid-template-columns: 1fr 38px;
@@ -128,6 +143,28 @@ a:focus-visible {
     flex: 1;
     align-content: start;
     padding-top: 20px;
+}
+
+@media (min-width: 881px) {
+    .header-right {
+        grid-template-rows: minmax(0, 1fr) auto;
+        align-content: stretch;
+    }
+
+    .header-right .top-nav {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .header-right .language-switcher {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .header-right .theme-switcher {
+        grid-column: 2;
+        grid-row: 2;
+    }
 }
 
 .language-switcher,
@@ -599,6 +636,10 @@ a:focus-visible {
 }
 
 @media (max-width: 880px) {
+    .sidebar-profile-icon {
+        display: none;
+    }
+
     .top-header {
         position: fixed;
         inset: 0 0 auto;
