@@ -637,7 +637,12 @@ a:focus-visible {
 
 @media (max-width: 880px) {
     .sidebar-profile-icon {
-        display: none;
+        display: block;
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+        margin: 0;
+        border-width: 1px;
     }
 
     .top-header {
@@ -659,6 +664,9 @@ a:focus-visible {
     }
 
     .header-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         min-width: 0;
         padding: 0;
         border: 0;
