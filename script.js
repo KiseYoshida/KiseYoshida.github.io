@@ -102,6 +102,7 @@ function toggleLanguage() {
 
 function switchToLanguage(lang) {
     currentLanguage = lang;
+    document.documentElement.lang = lang;
     
     // すべての言語要素を非表示
     const allJaElements = document.querySelectorAll('.ja');
