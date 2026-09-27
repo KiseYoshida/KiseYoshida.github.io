@@ -504,7 +504,8 @@ a:focus-visible {
     margin-top: 10px;
 }
 
-.publication-links a {
+.publication-links a,
+.publication-link-disabled {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -513,6 +514,11 @@ a:focus-visible {
     border-radius: 4px;
     color: var(--text-muted);
     font-size: 11px;
+}
+
+.publication-link-disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
 }
 
 .publication-links a:hover {
